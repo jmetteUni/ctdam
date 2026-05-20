@@ -111,7 +111,7 @@ class CnvFile(DataFile):
         """
         time_parameter = None
         for parameter in self.parameters.keys():
-            if parameter.lower().startswith("time"):
+            if (parameter.lower().startswith("time")) | (parameter.lower() != "timeU"):
                 time_parameter = parameter
         if time_parameter and self.start_time:
             self.parameters.create_parameter(
